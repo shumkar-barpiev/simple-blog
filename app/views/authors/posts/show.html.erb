@@ -1,8 +1,9 @@
 <p style="color: green"><%= notice %></p>
-<%= render @post %>
 <div>
-  <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-warning" %> |
-  <%= link_to "Back to posts", posts_path, class: "btn btn-secondary" %>
-  <hr>
-  <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-danger" %>
+  <%= render @post %>
+  <div class= "d-flex justify-content-between">
+    <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-danger" %>
+    <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-warning" %>
+    <%= link_to "Back to posts", posts_path, class: "btn btn-secondary" %>
+  </div>
 </div>
