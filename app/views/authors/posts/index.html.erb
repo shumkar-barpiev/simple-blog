@@ -1,0 +1,27 @@
+<h4 class= "d-flex mb-4 justify-content-between">
+  <span>Posts</span>
+  <%= link_to "New post", new_post_path, class: "btn btn-primary" %>
+</h4>
+<hr>
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= link_to post, class: "text-decoration-none" do %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <div id="<%= dom_id post %>">
+            <h5 class="cart-title text-dark">
+              <%= post.title %>
+            </h5>
+            <p class="text-secondary">
+              <strong>Description:</strong>
+              <%= post.description %>
+            </p>
+          </div>
+          <p>
+            <%= link_to "Show this post", post , class: "btn btn-success text-decoration-none"%>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
